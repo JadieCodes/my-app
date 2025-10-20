@@ -4,17 +4,19 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 text-center">
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8">
-          <span className="inline-block opacity-0 animate-fade-in">
-            Billie
-          </span>
-          {" "}
-          <span 
-            className="inline-block bg-gradient-to-r from-muted via-muted-foreground to-foreground bg-clip-text text-transparent bg-[length:200%_100%] animate-text-reveal"
-          >
-            Duvalle
-          </span>
-        </h1>
+      <h1 className="relative text-6xl md:text-8xl lg:text-9xl font-bold mb-8 text-gray-400 flex justify-center space-x-1 overflow-hidden">
+  {"Billie Duvalle".split("").map((char, i) => (
+    <span
+      key={i}
+      className="inline-block bg-gradient-to-r from-white to-white bg-[length:0%_100%] bg-left bg-no-repeat bg-clip-text text-transparent animate-reveal-letter"
+      style={{ animationDelay: `${i * 0.1}s` }}
+    >
+      {char === " " ? "\u00A0" : char}
+    </span>
+  ))}
+    </h1>
+
+
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-12 opacity-0 animate-fade-in-delay">
           Creative Developer & Designer

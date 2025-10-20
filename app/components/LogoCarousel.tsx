@@ -6,11 +6,11 @@ import { useEffect } from "react";
 
 const logos = [
   "affies-logo.png",
-  "azure.svg",
-  "figma.svg",
-  "google.svg",
+  "azure.png",
+  "figma.png",
+  "google.png",
   "intellij-idea-1.svg",
-  "microsoft.svg",
+  "microsoft.png",
   "NLC-Logo.png",
   "Open_Window_logo.svg",
   "red_erp-logo.png",

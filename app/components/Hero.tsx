@@ -4,7 +4,7 @@ import LogoCarousel from "./LogoCarousel"; // adjust path if LogoCarousel is in 
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 text-center mt-16">
         <h1 className="relative text-6xl md:text-8xl lg:text-9xl font-bold mb-8 text-gray-400 flex justify-center space-x-1 overflow-hidden">
           {"Bailey Swanepoel".split("").map((char, i) => (
             <span
@@ -37,9 +37,9 @@ const Hero = () => {
         </div>
       </div>
 
-     {/* LOGO CAROUSEL */}
+   {/* LOGO CAROUSEL */}
 <div
-  className="w-full mt-12 opacity-0 animate-fade-in-up"
+  className="w-full mt-16 mb-12 opacity-0 animate-fade-in-up" // increased mt and added mb
   style={{ animationDelay: "1.8s" }} // fade in after hero text & buttons
 >
   <LogoCarousel />

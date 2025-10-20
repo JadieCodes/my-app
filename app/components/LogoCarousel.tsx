@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const logos = [
   "affies-logo.png",
@@ -18,44 +17,42 @@ const logos = [
 ];
 
 export default function LogoCarousel() {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    controls.start({
-      x: ["0%", "-50%"],
-      transition: { repeat: Infinity, repeatType: "loop", duration: 25, ease: "linear" },
-    });
-  }, [controls]);
-
   return (
-    <div className="relative overflow-hidden py-10 bg-black cursor-grab">
-      {/* Gradient fades */}
-      <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-black to-transparent z-10" />
-      <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-black to-transparent z-10" />
+    <div className="relative w-full py-10 bg-background/20 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden">
+      {/* Top gradient */}
+      <div className="absolute top-0 left-0 h-16 w-full bg-gradient-to-b from-background/50 to-transparent z-10 pointer-events-none" />
+      {/* Bottom gradient */}
+      <div className="absolute bottom-0 left-0 h-16 w-full bg-gradient-to-t from-background/50 to-transparent z-10 pointer-events-none" />
+      {/* Side gradient fades */}
+      <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-background/50 to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-background/50 to-transparent z-10 pointer-events-none" />
 
+      {/* Infinite Scrolling Logos */}
       <motion.div
-        className="flex gap-16 items-center"
-        drag="x"
-        dragConstraints={{ left: -3000, right: 0 }}
-        dragElastic={0.1}
-        whileTap={{ cursor: "grabbing" }}
-        animate={controls}
+        className="flex gap-24 items-center"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          x: {
+            repeat: Infinity,
+            repeatType: "loop",
+            duration: 30,
+            ease: "linear",
+          },
+        }}
       >
         {[...logos, ...logos].map((logo, i) => (
-          <div
+          <motion.div
             key={i}
-            className="flex-shrink-0 opacity-0 animate-logo-fade"
-            style={{ animationDelay: `${i * 0.15}s` }} // stagger each logo
+            className="flex-shrink-0"
           >
             <Image
               src={`/logos/${logo}${logo.endsWith(".svg") || logo.endsWith(".png") ? "" : ".svg"}`}
               alt={logo.replace(/\.(svg|png)/, "")}
-              width={100}
-              height={100}
-              className="opacity-80 hover:opacity-100 transition-opacity duration-300"
+              width={60}
+              height={60}
               style={{ objectFit: "contain" }}
             />
-          </div>
+          </motion.div>
         ))}
       </motion.div>
     </div>

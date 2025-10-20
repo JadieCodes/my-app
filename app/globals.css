@@ -137,3 +137,34 @@ html {
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
   transform: translateY(-4px);
 }
+
+/* --- Fade-in-up animation for LogoCarousel --- */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out forwards;
+}
+/* --- Fade-in logo animation --- */
+@keyframes logo-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-logo-fade {
+  animation: logo-fade-in 0.8s ease-out forwards;
+}

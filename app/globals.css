@@ -52,3 +52,41 @@ html {
 .bg-gradient-primary {
   background: linear-gradient(135deg, hsl(280 80% 60%), hsl(240 80% 60%));
 }
+
+/* Add these new animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes text-reveal {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-text-reveal {
+  animation: text-reveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fade-in 1s ease-out forwards;
+  animation-delay: 1.2s;
+}

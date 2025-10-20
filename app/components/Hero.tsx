@@ -1,36 +1,26 @@
-import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 text-center">
         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8">
-          <span className={`inline-block transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <span className="inline-block opacity-0 animate-fade-in">
             Billie
           </span>
           {" "}
           <span 
-            className={`inline-block bg-gradient-to-r from-muted via-muted-foreground to-foreground bg-clip-text text-transparent bg-[length:200%_100%] ${isVisible ? 'animate-text-reveal' : ''}`}
-            style={{
-              backgroundPosition: isVisible ? '100% 0' : '-100% 0',
-            }}
+            className="inline-block bg-gradient-to-r from-muted via-muted-foreground to-foreground bg-clip-text text-transparent bg-[length:200%_100%] animate-text-reveal"
           >
             Duvalle
           </span>
         </h1>
         
-        <p className={`text-xl md:text-2xl text-muted-foreground mb-12 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-12 opacity-0 animate-fade-in-delay">
           Creative Developer & Designer
         </p>
 
-        <div className={`flex gap-4 justify-center transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+        <div className="flex gap-4 justify-center opacity-0 animate-fade-in-delay-2">
           <a 
             href="#projects" 
             className="px-8 py-4 bg-gradient-primary text-foreground rounded-lg font-semibold hover:scale-105 transition-transform duration-300"

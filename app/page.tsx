@@ -17,7 +17,7 @@ export default function Home() {
       
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 text-center text-muted-foreground">
-          <p>&copy; 2025 Billie Duvalle. All rights reserved.</p>
+          <p>&copy; 2025 Bailey Swanepoel. All rights reserved.</p>
         </div>
       </footer>
     </main>

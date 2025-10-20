@@ -5,7 +5,7 @@ const Hero = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 text-center">
       <h1 className="relative text-6xl md:text-8xl lg:text-9xl font-bold mb-8 text-gray-400 flex justify-center space-x-1 overflow-hidden">
-  {"Billie Duvalle".split("").map((char, i) => (
+  {"Bailey Swanepoel".split("").map((char, i) => (
     <span
       key={i}
       className="inline-block bg-gradient-to-r from-white to-white bg-[length:0%_100%] bg-left bg-no-repeat bg-clip-text text-transparent animate-reveal-letter"

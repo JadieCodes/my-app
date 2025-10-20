@@ -13,10 +13,10 @@ const Contact = () => {
   };
 
   const socials = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@billieduvalle.com", label: "Email" },
+    { icon: Github, href: "#", label: "GitHub", color: "from-gray-600 to-gray-400" },
+    { icon: Linkedin, href: "#", label: "LinkedIn", color: "from-blue-600 to-cyan-400" },
+    { icon: Twitter, href: "#", label: "Twitter", color: "from-sky-500 to-blue-400" },
+    { icon: Mail, href: "mailto:hello@billieduvalle.com", label: "Email", color: "from-pink-500 to-rose-400" },
   ];
 
   return (
@@ -48,10 +48,15 @@ const Contact = () => {
                     <a
                       key={index}
                       href={social.href}
-                      className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-accent hover:bg-secondary transition-all duration-300 group"
+                      className={`group flex items-center gap-4 p-4 bg-card border border-border rounded-lg relative overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-lg hover:shadow-accent/10`}
                     >
-                      <Icon className="w-5 h-5 group-hover:text-accent transition-colors" />
-                      <span className="group-hover:text-accent transition-colors">{social.label}</span>
+                      <div className={`absolute inset-0 bg-gradient-to-r ${social.color} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-700`} />
+                      <div className="relative flex items-center gap-4 z-10">
+                        <Icon className="w-5 h-5 group-hover:text-accent transition-colors duration-300" />
+                        <span className="group-hover:text-accent transition-colors duration-300">
+                          {social.label}
+                        </span>
+                      </div>
                     </a>
                   );
                 })}
@@ -100,7 +105,7 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-gradient-primary text-foreground font-semibold hover:scale-105 transition-transform"
+                className="w-full bg-gradient-to-r from-accent to-primary text-foreground font-semibold hover:scale-105 hover:shadow-lg hover:shadow-accent/20 transition-all duration-300"
               >
                 Send Message
               </Button>

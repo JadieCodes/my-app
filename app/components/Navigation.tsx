@@ -33,7 +33,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <a href="#home" className="text-2xl font-bold text-gradient">
-            BD
+            BS
           </a>
 
           {/* Desktop Navigation */}
